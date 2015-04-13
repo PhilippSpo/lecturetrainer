@@ -1,0 +1,27 @@
+<template name="question">
+	<div class="center-wrapper questioning-wrapper">
+		{{#if isSpeechProject}}
+			{{>speechQuestioning question}}
+		{{else}}
+			{{>qaQuestioning question}}
+		{{/if}}
+
+		<div class="button-footer">
+			<div class="center-wrapper">
+				<button id="prevQuestion" class="btn left waves-effect">
+					<i class="mdi-navigation-arrow-back"></i>
+				</button>
+				<button id="nextQuestion" class="btn right waves-effect">
+					<i class="mdi-navigation-arrow-forward"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="questionToolbar">
+	<a href="/projects/{{projectId}}" class="waves-effect">
+		<i class="mdi-navigation-arrow-back"></i>
+	</a>
+	<div class="left brand-logo">Translation</div>
+</template>

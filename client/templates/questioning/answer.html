@@ -1,0 +1,46 @@
+<template name="answer">
+	<div class="center-wrapper">
+		<div class="list-heading">
+			{{#if correct}}
+			Your answer was correct
+			{{else}}
+			Your answer was wrong
+			{{/if}}
+		</div>
+		{{#with question}}
+		<div class="list-item">
+			The Translation of {{this.question}} in German is:
+		</div>
+		<div class="list-item">
+			<div class="icon">
+				<i class="mdi-navigation-check text-green"></i>
+			</div>
+			<div class="primary">{{this.answer}}</div>
+		</div>
+		{{#unless correct}}
+		<div class="list-item">
+			Your answer was:
+		</div>
+		<div class="list-item">
+			<div class="icon">
+				<i class="mdi-navigation-close text-red"></i>
+			</div>
+			<div class="primary">{{userAnswer}}</div>
+		</div>
+		{{/unless}}
+		{{/with}}
+
+		<div class="row">
+			<div class="col s12 m12 l6">
+				<button id="nextQuestion" class="btn left waves-effect">OK</button>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="answerToolbar">
+	<a href="/projects/{{projectId}}" class="waves-effect">
+		<i class="mdi-navigation-arrow-back"></i>
+	</a>
+	<div class="left brand-logo">Solution</div>
+</template>

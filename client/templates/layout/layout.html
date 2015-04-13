@@ -1,0 +1,31 @@
+<template name="layout">
+	<header>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper row">
+					<div class="col s12">
+						{{> Template.dynamic template=top}}
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<ul id="side-nav" class="side-nav">
+			<li class="logo">
+				<nav>
+					<a href="#!" class="logo hide-on-med-and-down">
+						Lecture Trainer
+					</a>
+				</nav>
+			</li>
+      <li>{{> atNavButton }}</li>
+			{{> Template.dynamic template=aside}}
+		</ul>
+
+	<main>
+		<div class="center-wrapper">
+			{{> Template.dynamic template=main}}
+		</div>
+	</main>
+</template>

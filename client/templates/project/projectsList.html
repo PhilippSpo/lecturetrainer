@@ -1,0 +1,21 @@
+<template name="projectsList">
+	<div class="list-heading">
+		All projects
+	</div>
+	<ul class="collection">
+		{{#each projects}}
+			{{> projectsListItem}}
+		{{/each}}
+	</ul>
+	<div class="fixed-action-btn" style="bottom: 15px; right: 15px;">
+		<a href="newProject" id="addUser" class="btn-floating btn-large waves-effect waves-light">
+			<i class="large mdi-content-add"></i>
+		</a>
+	</div>
+</template>
+
+<template name="projectsListToolbar">
+	<a href="#" data-activates="side-nav" class="waves-effect collapse-sidenav">
+		<i class="mdi-navigation-menu"></i>
+	</a>
+</template>

@@ -1,0 +1,22 @@
+<template name="newProject">
+<div class="row">
+	<div class="col s12 m12 l6">
+		{{# autoForm collection="Projects" id="insertProjectForm" type="insert"}}
+			{{> afQuickField name="name"}}
+			{{> afQuickField name="type" options="allowed"}}
+			{{#if afFieldValueIs name="type" value="Speech"}}
+			    {{> afQuickField name="speechA"}}
+			    {{> afQuickField name="speechB"}}
+		  	{{/if}}
+			<button type="submit" class="btn btn-primary">Submit</button>
+		{{/autoForm}}
+	</div>
+</div>
+</template>
+
+<template name="newProjectToolbar">
+	<a href="/" data-activates="side-nav" class="waves-effect collapse-sidenav">
+		<i class="mdi-navigation-arrow-back"></i>
+	</a>
+	<div class="left brand-logo">New Project</div>
+</template>

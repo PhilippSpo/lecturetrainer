@@ -1,0 +1,18 @@
+<template name="updateProject">
+<div class="row">
+	<div class="col s12 m12 l6">
+		{{# autoForm collection="Projects" id="updateProjectForm" type="update" doc=project}}
+			{{> afQuickField name="name"}}
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		{{/autoForm}}
+	</div>
+</div>
+</template>
+
+<template name="updateProjectToolbar">
+	<a href="/" data-activates="side-nav" class="waves-effect collapse-sidenav">
+		<i class="mdi-navigation-arrow-back"></i>
+	</a>
+	<div class="left brand-logo">Update Project</div>
+</template>

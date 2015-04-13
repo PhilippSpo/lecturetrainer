@@ -1,0 +1,24 @@
+<template name="questionsList">
+	<div class="list-heading">
+		All Questions
+	</div>
+	<ul class="collection">
+	{{#each questions}}
+		{{> questionsListItem}}
+	{{/each}}
+	</ul>
+	<div class="fixed-action-btn" style="bottom: 15px; right: 15px;">
+		<a href="/projects/{{projectId}}/newQuestion" id="addUser" class="btn-floating btn-large waves-effect waves-light">
+			<i class="large mdi-content-add"></i>
+		</a>
+	</div>
+</template>
+
+<template name="questionsListToolbar">
+	<a href="/" class="waves-effect">
+		<i class="mdi-navigation-arrow-back"></i>
+	</a>
+	{{#with project}}
+		<div class="left brand-logo">{{name}}</div>
+	{{/with}}
+</template>

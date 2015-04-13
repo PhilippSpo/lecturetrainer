@@ -1,0 +1,21 @@
+<template name="newQuestion">
+	<div class="row">
+		<div class="col s12 m12 l6">
+			{{#autoForm collection="Questions" id="insertQuestionForm" type="insert"}}
+				{{> afQuickField name="question" autocomplete="off"}}
+				{{> afQuickField name="answer" autocomplete="off"}}
+				{{> afQuickField name="tags" autocomplete="off"}}
+
+				<button type="submit" class="btn btn-primary">Submit</button>
+			{{/autoForm}}
+		</div>
+	</div>
+</template>
+
+
+<template name="newQuestionToolbar">
+	<a href="/projects/{{projectId}}" class="waves-effect">
+		<i class="mdi-navigation-arrow-back"></i>
+	</a>
+	<div class="left brand-logo">New Question</div>
+</template>

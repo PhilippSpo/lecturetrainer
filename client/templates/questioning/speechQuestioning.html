@@ -1,0 +1,9 @@
+<template name="speechQuestioning">
+	What is the translation of {{this.question}} in German? (Has {{numberOfAnswers}} translations)
+
+	{{#autoForm schema=answerSchema id="questioningForm" type="method" meteormethod="giveAnswer"}}
+		{{> afQuickField name="answer"}}
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+	{{/autoForm}}
+</template>
