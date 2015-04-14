@@ -1,0 +1,21 @@
+<template name="qaAnswer">
+<div class="list-item">
+	The correct answer is:
+</div>
+<div class="row">
+{{#with question}}
+	<div class="col s12">
+		{{{this.answer}}}
+	</div>
+{{/with}}
+	<div class="col s12">Did you know that?</div>
+	<div class="col s12">
+		<button id="correctAnswer" class="btn waves-effect green">
+			<i class="mdi-action-done"></i>
+		</button>
+		<button id="wrongAnswer" class="btn waves-effect red">
+			<i class="mdi-navigation-close"></i>
+		</button>
+	</div>
+</div>
+</template>

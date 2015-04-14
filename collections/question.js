@@ -3,16 +3,16 @@ Questions = new Mongo.Collection('questions');
 QuestionSchema = new SimpleSchema({
 	question: {
 		type: String,
-		label: "Fragetext"
+		label: "Question"
 	},
 	tags: {
 		type: [String],
-		label: "Kategorien",
+		label: "Tags",
 		optional: true
 	},
 	answer: {
 		type: String,
-		label: "Antwort"
+		label: "Answer"
 	},
 	project: {
 		type: String
