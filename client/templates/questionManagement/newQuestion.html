@@ -1,15 +1,19 @@
 <template name="newQuestion">
-	{{#autoForm collection="Questions" id="insertQuestionForm" type="insert"}}
-		{{> afQuickField name="question" autocomplete="off"}}
-		{{#if isSpeechProject}}
-			{{> afQuickField name="answer" autocomplete="off"}}
-		{{else}}
-			{{> answerEditor}}
-		{{/if}}
-		{{> afQuickField name="tags" autocomplete="off"}}
+	<div class="row">
+		<div class="col s12">
+			{{#autoForm collection="Questions" id="insertQuestionForm" type="insert"}}
+				{{> afQuickField name="question" autocomplete="off"}}
+				{{#if isSpeechProject}}
+					{{> afQuickField name="answer" autocomplete="off"}}
+				{{else}}
+					{{> answerEditor}}
+				{{/if}}
+				{{> afQuickField name="tags" autocomplete="off"}}
 
-		<button type="submit" class="btn btn-primary">Submit</button>
-	{{/autoForm}}
+				<button type="submit" class="btn btn-primary">Submit</button>
+			{{/autoForm}}
+		</div>
+	</div>
 </template>
 
 

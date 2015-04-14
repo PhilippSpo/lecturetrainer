@@ -3,8 +3,8 @@ Meteor.methods({
 		var question = Questions.findOne({
 			_id: doc.questionId
 		});
-		var correctAnswers = question.answer.replace(/ /g, '').split(',');
-		var userAnswers = doc.answer.replace(/ /g, '').split(',');
+		var correctAnswers = question.answer.replace(/ /g, '').toLowerCase().split(',');
+		var userAnswers = doc.answer.replace(/ /g, '').toLowerCase().split(',');
 		
 		if (question && checkCorrectAnswer(correctAnswers, userAnswers)) {
 			correctAnswer(this.userId, doc);
