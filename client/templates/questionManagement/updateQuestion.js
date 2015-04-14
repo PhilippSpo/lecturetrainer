@@ -23,7 +23,6 @@ AutoForm.hooks({
 	        if(helpers.isSpeechProject() === false){
 	          doc['$set'].answer = $('div#answer').editable('getHTML');
 	        }
-	        console.log(doc);
 	        return doc;
   		}
   	},

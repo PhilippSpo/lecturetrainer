@@ -3,7 +3,9 @@ Template.speechQuestioning.helpers({
 		return Schemas.answerSchema;
 	},
 	numberOfAnswers: function() {
-		return this.answer.split(',').length;
+		if(this.answer){
+			return this.answer.split(',').length;
+		}
 	}
 });
 
