@@ -16,12 +16,6 @@ var helpers = {
 
 Template.newQuestion.helpers(helpers);
 
-Template.newQuestion.onRendered(function() {
-  $('div#answer').editable({
-    inlineMode: false
-  });
-});
-
 AutoForm.hooks({
   insertQuestionForm: {
   	before: {

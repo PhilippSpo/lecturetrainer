@@ -1,10 +1,36 @@
-Template.updateQuestion.helpers({
+var helpers = {
+	isSpeechProject: function() {
+		var project = Projects.findOne({_id: FlowRouter.getParam('projectId')});
+		if(project && project.type === 'Speech'){
+			return true;
+		}
+		return false;
+	},
 	question: function () {
 		return Questions.findOne({_id: FlowRouter.getParam('questionId')});
 	},
 	isReady: function() {
 		return FlowRouter.subsReady();
 	}
+}
+
+Template.updateQuestion.helpers(helpers);
+
+AutoForm.hooks({
+  updateQuestionForm: {
+  	before: {
+  		update: function(doc) {
+	        if(helpers.isSpeechProject() === false){
+	          doc['$set'].answer = $('div#answer').editable('getHTML');
+	        }
+	        console.log(doc);
+	        return doc;
+  		}
+  	},
+  	onSuccess: function() {
+  		FlowRouter.go('/projects/'+FlowRouter.getParam('projectId'));
+  	}
+  }
 });
 
 Template.updateQuestionToolbar.helpers({
