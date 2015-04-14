@@ -2,16 +2,20 @@ Ratings = new Mongo.Collection('ratings');
 
 Rating = new SimpleSchema({
 	project: {
-		type: String
+		type: String,
+    	index: 1
 	},
 	question: {
-		type: String
+		type: String,
+    	index: 1
 	},
 	user: {
-		type: String
+		type: String,
+    	index: 1
 	},
 	score: {
-		type: Number
+		type: Number,
+    	index: 1
 	}
 });
 

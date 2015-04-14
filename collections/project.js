@@ -3,7 +3,8 @@ Projects = new Mongo.Collection('projects');
 ProjectSchema = new SimpleSchema({
 	name: {
 		type: String,
-		label: "Projectname"
+		label: "Projectname",
+    	index: 1
 	},
 	type: {
 		type: String,

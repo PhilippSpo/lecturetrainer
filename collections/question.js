@@ -3,7 +3,8 @@ Questions = new Mongo.Collection('questions');
 QuestionSchema = new SimpleSchema({
 	question: {
 		type: String,
-		label: "Question"
+		label: "Question",
+    	index: 1
 	},
 	tags: {
 		type: [String],
@@ -12,17 +13,21 @@ QuestionSchema = new SimpleSchema({
 	},
 	answer: {
 		type: String,
-		label: "Answer"
+		label: "Answer",
+    	index: 1
 	},
 	project: {
-		type: String
+		type: String,
+    	index: 1
 	},
 	hasRating: {
 		type: [Object],
-		optional: true
+		optional: true,
+    	index: 1
 	},
 	'hasRating.$.user': {
-		type: String
+		type: String,
+    	index: 1
 	}
 });
 

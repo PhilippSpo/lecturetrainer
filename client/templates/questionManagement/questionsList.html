@@ -2,15 +2,17 @@
 	<div class="list-heading">
 		All Questions
 	</div>
-	<ul class="collection">
-	{{#each questions}}
-		{{> questionsListItem}}
-	{{/each}}
-	</ul>
-	<div class="fixed-action-btn" style="bottom: 15px; right: 15px;">
-		<a href="/projects/{{projectId}}/newQuestion" id="addUser" class="btn-floating btn-large waves-effect waves-light">
-			<i class="large mdi-content-add"></i>
-		</a>
+	<div class="collection-wrapper">
+		<ul class="collection">
+		{{#each questions}}
+			{{> questionsListItem}}
+		{{/each}}
+		</ul>
+		<div class="fixed-action-btn" style="bottom: 15px; right: 15px;">
+			<a href="/projects/{{projectId}}/newQuestion" id="addUser" class="btn-floating btn-large waves-effect waves-light">
+				<i class="large mdi-content-add"></i>
+			</a>
+		</div>
 	</div>
 </template>
 
