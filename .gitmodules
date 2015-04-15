@@ -1,3 +1,0 @@
-[submodule "packages/core"]
-	update = checkout
-	fetchRecurseSubmodules = false
