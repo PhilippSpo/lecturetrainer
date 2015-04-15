@@ -9,13 +9,23 @@
 		</div>
 		{{#with question}}
 		<div class="list-item">
-			The Translation of {{this.question}} in German is:
+			{{#if reverse}}
+				The Translation of {{this.answer}} in {{project.speechA}} is:
+			{{else}}
+				The Translation of {{this.question}} in {{project.speechB}} is:
+			{{/if}}
 		</div>
 		<div class="list-item">
 			<div class="icon">
 				<i class="mdi-navigation-check text-green"></i>
 			</div>
-			<div class="primary">{{this.answer}}</div>
+			<div class="primary">
+				{{#if reverse}}
+					{{this.question}}
+				{{else}}
+					{{this.answer}}
+				{{/if}}
+			</div>
 		</div>
 		{{#unless correct}}
 		<div class="list-item">

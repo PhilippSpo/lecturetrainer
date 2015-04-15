@@ -1,5 +1,9 @@
 <template name="speechQuestioning">
-	What is the translation of "{{this.question}}" in German?
+	{{#if reverse}}
+		What is the translation of "{{this.answer}}" in {{project.speechA}}?
+	{{else}}
+		What is the translation of "{{this.question}}" in {{project.speechB}}?
+	{{/if}}
 	<!--  (Has {{numberOfAnswers}} translations) -->
 
 	{{#autoForm schema=answerSchema id="questioningForm" type="method" meteormethod="giveAnswer"}}

@@ -2,6 +2,17 @@ Template.speechQuestioning.helpers({
 	answerSchema: function() {
 		return Schemas.answerSchema;
 	},
+	reverse: function() {
+		if (Math.random() >= 0.5) {
+			Template.speechQuestioning.reverse = true;
+		}else{
+			Template.speechQuestioning.reverse = false;
+		}
+		return Template.speechQuestioning.reverse;
+	},
+	project: function() {
+		return Projects.findOne({_id: FlowRouter.getParam('projectId')});
+	},
 	numberOfAnswers: function() {
 		if(this.answer){
 			return this.answer.split(',').length;
@@ -16,6 +27,7 @@ AutoForm.hooks({
 				Template.question.answer = doc.answer;
 				doc.questionId = FlowRouter.getParam('questionId');
 				doc.projectId = FlowRouter.getParam('projectId');
+				doc.reverse = Template.speechQuestioning.reverse;
 				return doc;
 			}
 		},

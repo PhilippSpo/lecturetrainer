@@ -10,6 +10,12 @@ Template.answer.helpers({
 	correct: function() {
 		return Template.question.correct;
 	},
+	project: function() {
+		return Projects.findOne({_id: FlowRouter.getParam('projectId')});
+	},
+	reverse: function() {
+		return Template.speechQuestioning.reverse;
+	}
 });
 Template.answer.events({
 	'click #nextQuestion': function () {
