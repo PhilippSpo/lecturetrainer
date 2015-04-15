@@ -1,20 +1,20 @@
 <template name="question">
-	<div class="center-wrapper questioning-wrapper">
+	<div class="questioning-wrapper">
 		{{#if isSpeechProject}}
 			{{>speechQuestioning question}}
 		{{else}}
 			{{>qaQuestioning question}}
 		{{/if}}
+	</div>
 
-		<div class="button-footer">
-			<div class="center-wrapper nav-footer-wrapper">
-				<button id="prevQuestion" class="btn left waves-effect">
-					<i class="mdi-navigation-arrow-back"></i>
-				</button>
-				<button id="nextQuestion" class="btn right waves-effect">
-					<i class="mdi-navigation-arrow-forward"></i>
-				</button>
-			</div>
+	<div class="button-footer">
+		<div class="center-wrapper nav-footer-wrapper">
+			<button id="prevQuestion" class="btn left waves-effect">
+				<i class="mdi-navigation-arrow-back"></i>
+			</button>
+			<button id="nextQuestion" class="btn right waves-effect">
+				<i class="mdi-navigation-arrow-forward"></i>
+			</button>
 		</div>
 	</div>
 </template>

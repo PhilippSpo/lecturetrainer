@@ -1,5 +1,5 @@
 <template name="speechQuestioning">
-	What is the translation of {{this.question}} in German?
+	What is the translation of "{{this.question}}" in German?
 	<!--  (Has {{numberOfAnswers}} translations) -->
 
 	{{#autoForm schema=answerSchema id="questioningForm" type="method" meteormethod="giveAnswer"}}
