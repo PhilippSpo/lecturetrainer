@@ -1,3 +1,7 @@
+Template.speechQuestioning.created = function() {
+	Template.speechQuestioning.reverse = false;
+};
+
 Template.speechQuestioning.helpers({
 	answerSchema: function() {
 		return Schemas.answerSchema;
@@ -5,8 +9,6 @@ Template.speechQuestioning.helpers({
 	reverse: function() {
 		if (Math.random() >= 0.5) {
 			Template.speechQuestioning.reverse = true;
-		}else{
-			Template.speechQuestioning.reverse = false;
 		}
 		return Template.speechQuestioning.reverse;
 	},

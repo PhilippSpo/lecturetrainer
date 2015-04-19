@@ -21,7 +21,6 @@ Template.answer.events({
 	'click #nextQuestion': function () {
 		Meteor.call('calcNextQuestion', FlowRouter.getParam('questionId'), FlowRouter.getParam('projectId'), function(err, result) {
 			// result returns the question id
-			console.log(result);
 			if (!err) {
 				if (result !== false) {
 					Session.set('prevQuestion', FlowRouter.getParam('questionId'));
