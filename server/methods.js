@@ -95,7 +95,6 @@ function removeDiacritics (str) {
     return str;
 }
 
-console.log(removeDiacritics("Hola! Qué tal?"));
 Meteor.methods({
 	giveAnswer: function(doc) {
 		var question = Questions.findOne({
