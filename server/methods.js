@@ -205,15 +205,16 @@ function findQuestionWithoutScore(currentQuestion, project,  userId){
 }
 
 function pickRandomFromArray(array){
-	return array[Math.floor(Math.random() * array.length)];
+  var random = Math.floor(Math.random() * array.length);
+	return array[random];
 }
 
 function questionWithPositiveScore(currentQuestion, projectId) {
-	var ratings = Ratings.find({project: projectId, score: {$gt: -1}, question: {$ne: currentQuestion}}).fetch();
+	var ratings = Ratings.find({project: projectId, score: {$gt: 2}, question: {$ne: currentQuestion}}).fetch();
 	return pickRandomFromArray(ratings);
 }
 
 function questionWithNegativeScore(currentQuestion, projectId) {
-	var ratings = Ratings.find({project: projectId, score: {$lt: 0}, question: {$ne: currentQuestion}}).fetch();
+	var ratings = Ratings.find({project: projectId, score: {$lt: 3}, question: {$ne: currentQuestion}}).fetch();
 	return pickRandomFromArray(ratings);
 }

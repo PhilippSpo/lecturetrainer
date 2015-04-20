@@ -14,7 +14,7 @@ Template.answer.helpers({
 		return Projects.findOne({_id: FlowRouter.getParam('projectId')});
 	},
 	reverse: function() {
-		return Template.speechQuestioning.reverse;
+		return QuestioningTemplate.reverse;
 	}
 });
 Template.answer.events({

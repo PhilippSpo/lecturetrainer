@@ -7,8 +7,14 @@
 	<!--  (Has {{numberOfAnswers}} translations) -->
 
 	{{#autoForm schema=answerSchema id="questioningForm" type="method" meteormethod="giveAnswer"}}
-		{{> afQuickField name="answer"}}
 
-		<button type="submit" class="btn btn-primary waves-effect">Submit</button>
+		<div class="input-field">
+			<input type="text" name="answer" autofocus="" required="" data-schema-key="answer">
+			<label for="ahnW8M27XXta3sYZM" class="active">
+				Answer
+			</label>
+		</div>
+
+		<button type="submit" class="btn waves-effect blue accent-2">Submit</button>
 	{{/autoForm}}
 </template>

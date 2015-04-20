@@ -8,12 +8,14 @@
 			{{/if}}
 		</div>
 		{{#with question}}
-		<div class="list-item">
-			{{#if reverse}}
-				The Translation of {{this.answer}} in {{project.speechA}} is:
-			{{else}}
-				The Translation of {{this.question}} in {{project.speechB}} is:
-			{{/if}}
+		<div class="row">
+			<div class="col s12">
+				{{#if reverse}}
+					The Translation of {{this.answer}} in {{project.speechA}} is:
+				{{else}}
+					The Translation of {{this.question}} in {{project.speechB}} is:
+				{{/if}}
+			</div>
 		</div>
 		<div class="list-item">
 			<div class="icon">
@@ -41,8 +43,8 @@
 		{{/with}}
 
 		<div class="row">
-			<div class="col s12 m12 l6">
-				<button id="nextQuestion" class="btn left waves-effect">OK</button>
+			<div class="col s12">
+				<button id="nextQuestion" class="btn waves-effect blue accent-2">OK</button>
 			</div>
 		</div>
 	</div>

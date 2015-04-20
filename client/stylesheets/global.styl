@@ -10,7 +10,7 @@ $gutter = 20px
 
 .center-wrapper
 	center()
-	
+
 .main-content-wrapper
 	@css {
 		height: calc(100vh - 65px);
@@ -22,15 +22,23 @@ $gutter = 20px
 .questioning-wrapper
 	padding 10px
 	padding-top 20px
+	position absolute
+	bottom 55px
+	left 0
+	right 0
+	top 0
+	overflow auto
 
 .button-footer
 	border-top 1px solid border-color
 	position absolute
+	z-index 1
+	background white
 	padding 10px 0
 	bottom 0
 	left 0
 	right 0
-	
+
 .nav-footer-wrapper
 	padding 0 10px
 
@@ -48,7 +56,7 @@ body
 
 .navbar-fixed
 	z-index 997
-	
+
 ul.side-nav.fixed li.menu-item
 	line-height: 44px
 
@@ -56,34 +64,34 @@ ul.side-nav li.logo
 	padding: 0
 	a
 		color: white
-	
+
 ul.collection
 	border: 0
-	
+
 li.collection-item.header-item
 	border: 0
-	
+
 ul.collection a.collection-item
 	color: rgba(0, 0, 0, 0.87)
 	&:hover
 		background: #fff !important
-		
+
 .text-green
 	color green
-	
+
 .text-red
 	color red
-	
+
 
 .info
 	.row.center-wrapper
 		center(410px)
 	img
 		max-width 200px
-		
+
 .nav-footer-wrapper
 	padding 0 10px
-	
+
 main.landing
 	height 100vh
 	background-image url('/images/127H.jpg')
@@ -97,11 +105,10 @@ main.landing
 	justify-content center
 	align-items center
 	text-align center
-	
+
 	.landing-content
 		border-radius 5px
 		background rgba(0,0,0,0.5)
 		opacity 0.9
 		padding 20px
 		width 100%
-		

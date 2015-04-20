@@ -1,3 +1,5 @@
+QuestioningTemplate = null;
+
 Template.questionToolbar.helpers({
 	projectId: function() {
 		return FlowRouter.getParam('projectId');
