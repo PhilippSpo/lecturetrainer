@@ -13,8 +13,7 @@ QuestionSchema = new SimpleSchema({
 	},
 	answer: {
 		type: String,
-		label: "Answer",
-    	index: 1
+		label: "Answer"
 	},
 	project: {
 		type: String,
