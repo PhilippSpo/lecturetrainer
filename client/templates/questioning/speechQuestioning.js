@@ -1,8 +1,3 @@
-Template.speechQuestioning.created = function() {
-	this.reverse = false;
-	QuestioningTemplate = this;
-};
-
 Template.speechQuestioning.onRendered(function() {
 	$('input[autofocus]').focus();
 });
@@ -13,9 +8,11 @@ Template.speechQuestioning.helpers({
 	},
 	reverse: function() {
 		if (Math.random() >= 0.5) {
-			Template.instance().reverse = true;
+			LayoutTemplate.reverse = true;
+		}else{
+			LayoutTemplate.reverse = false;
 		}
-		return Template.instance().reverse;
+		return LayoutTemplate.reverse;
 	},
 	project: function() {
 		return Projects.findOne({_id: FlowRouter.getParam('projectId')});
@@ -34,7 +31,7 @@ AutoForm.hooks({
 				Template.question.answer = doc.answer;
 				doc.questionId = FlowRouter.getParam('questionId');
 				doc.projectId = FlowRouter.getParam('projectId');
-				doc.reverse = QuestioningTemplate.reverse;
+				doc.reverse = LayoutTemplate.reverse;
 				return doc;
 			}
 		},
