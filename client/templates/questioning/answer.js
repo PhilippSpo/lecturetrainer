@@ -15,6 +15,26 @@ Template.answer.helpers({
 	},
 	reverse: function() {
 		return LayoutTemplate.reverse;
+	},
+	languageA: function(){
+		var language = Projects.findOne({_id: FlowRouter.getParam('projectId')}).speechA;
+		if(language === "Spanisch"){
+			return "es-ES";
+		}else if(language === "Französisch"){
+			return "fr-FR";
+		}else if(language === "Deutsch"){
+			return "de-DE";
+		}
+	},
+	languageB: function(){
+		var language = Projects.findOne({_id: FlowRouter.getParam('projectId')}).speechB;
+		if(language === "Spanisch"){
+			return "es-ES";
+		}else if(language === "Französisch"){
+			return "fr-FR";
+		}else if(language === "Deutsch"){
+			return "de-DE";
+		}
 	}
 });
 Template.answer.events({
@@ -30,7 +50,11 @@ Template.answer.events({
 				}
 			}
 		});
-	}
+	},
+	'click #sayText': function(){
+    var element = document.querySelector('#textToSay');
+    element.speak();
+  }
 });
 
 Template.answerToolbar.helpers({

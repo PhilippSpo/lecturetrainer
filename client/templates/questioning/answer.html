@@ -24,8 +24,12 @@
 			<div class="primary">
 				{{#if reverse}}
 					{{this.question}}
+					<voice-player id="textToSay" accent="{{languageA}}" text="{{this.question}}"></voice-player>
+					<a id="sayText" class="btn-floating waves-effect waves-light"><i class="mdi-av-play-circle-fill"></i></a>
 				{{else}}
 					{{this.answer}}
+					<voice-player id="textToSay" accent="{{languageB}}" text="{{this.answer}}"></voice-player>
+					<a id="sayText" class="btn-floating waves-effect waves-light"><i class="mdi-av-play-circle-fill"></i></a>
 				{{/if}}
 			</div>
 		</div>
