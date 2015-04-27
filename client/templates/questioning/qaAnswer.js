@@ -17,7 +17,7 @@ Template.qaAnswer.events({
 			nextQuestion();
 		});
 	}
-})
+});
 
 function nextQuestion() {
 	Meteor.call('calcNextQuestion', FlowRouter.getParam('questionId'), FlowRouter.getParam('projectId'), function(err, result) {
