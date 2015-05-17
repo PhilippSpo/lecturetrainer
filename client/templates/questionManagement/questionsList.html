@@ -18,12 +18,14 @@
 
 <template name="questionsListToolbar">
 	{{#with project}}
-		<a href="/projects/{{_id}}" class="waves-effect btn-icon">
-			<i class="mdi-navigation-arrow-back"></i>
-		</a>
+		<div>
+			<a href="/projects/{{_id}}" class="waves-effect btn-icon">
+				<i class="mdi-navigation-arrow-back"></i>
+			</a>
+		</div>
 	{{/with}}
 
 	{{#with chapter}}
-		<div class="left brand-logo">{{title}}</div>
+		<div>{{title}}</div>
 	{{/with}}
 </template>
