@@ -1,0 +1,24 @@
+<template name="chaptersList">
+	<div class="list-heading">
+		All Chapters
+	</div>
+	<ul class="collection">
+		{{#each chapters}}
+			{{> chaptersListItem}}
+		{{/each}}
+	</ul>
+	<div class="fixed-action-btn" style="bottom: 15px; right: 15px;">
+		<a href="/projects/{{projectId}}/newChapter" id="newChapter" class="btn-floating btn-large waves-effect waves-light">
+			<i class="large mdi-content-add"></i>
+		</a>
+	</div>
+</template>
+
+<template name="chaptersListToolbar">
+	{{#with project}}
+		<a href="/projects/" class="waves-effect btn-icon">
+			<i class="mdi-navigation-arrow-back"></i>
+		</a>
+		<div class="left brand-logo">{{name}}</div>
+	{{/with}}
+</template>

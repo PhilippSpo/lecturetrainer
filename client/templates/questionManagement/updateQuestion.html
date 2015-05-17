@@ -9,7 +9,6 @@
 				{{else}}
 					{{> answerEditor question}}
 				{{/if}}
-				{{> afQuickField name="tags"}}
 
 				<button type="submit" class="btn waves-effect blue accent-2">Submit</button>
 			{{/autoForm}}
@@ -19,16 +18,8 @@
 </template>
 
 <template name="updateQuestionToolbar">
-	<a href="/projects/{{projectId}}" class="waves-effect">
+	<a href="/projects/{{projectId}}/{{chapterId}}" class="waves-effect btn-icon">
 		<i class="mdi-navigation-arrow-back"></i>
 	</a>
 	<div class="left brand-logo">Update Question</div>
-
-	<!-- <ul class="right">
-		<li>
-			<a href="/projects/{{projectId}}" class="waves-effect">
-				<i id="deleteQuestionButton" class="mdi-action-delete"></i>
-			</a>
-		</li>
-	</ul> -->
 </template>
