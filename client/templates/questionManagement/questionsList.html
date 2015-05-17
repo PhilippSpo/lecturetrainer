@@ -9,7 +9,7 @@
 		{{/each}}
 		</ul>
 		<div class="fixed-action-btn" style="bottom: 15px; right: 15px;">
-			<a href="/projects/{{projectId}}/newQuestion" id="addUser" class="btn-floating btn-large waves-effect waves-light">
+			<a href="/projects/{{projectId}}/{{chapterId}}/newQuestion" id="addUser" class="btn-floating btn-large waves-effect waves-light">
 				<i class="large mdi-content-add"></i>
 			</a>
 		</div>
@@ -17,15 +17,13 @@
 </template>
 
 <template name="questionsListToolbar">
-	<a href="/" class="waves-effect">
-		<i class="mdi-navigation-arrow-back"></i>
-	</a>
 	{{#with project}}
-		<div class="left brand-logo">{{name}}</div>
+		<a href="/projects/{{_id}}" class="waves-effect btn-icon">
+			<i class="mdi-navigation-arrow-back"></i>
+		</a>
 	{{/with}}
-	<a class="right dropdown-button" href="#!" data-activates="dropdown1">Tags<i class="mdi-navigation-arrow-drop-down right"></i></a>
-	<ul id='dropdown1' class='dropdown-content'>
-		<li><a href="#!">one</a></li>
-		<li><a href="#!">two</a></li>
-	</ul>
+
+	{{#with chapter}}
+		<div class="left brand-logo">{{title}}</div>
+	{{/with}}
 </template>

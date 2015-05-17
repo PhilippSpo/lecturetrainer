@@ -1,8 +1,11 @@
 Template.questionsListItem.helpers({
-	projectId: function() {
+	projectId: function () {
 		return FlowRouter.getParam('projectId');
 	},
-	score: function() {
+	chapterId: function () {
+		return FlowRouter.getParam('chapterId');
+	},
+	score: function () {
 		var rating = Ratings.findOne({
 			user: Meteor.user()._id,
 			question: this._id
@@ -11,16 +14,16 @@ Template.questionsListItem.helpers({
 			return rating.score;
 		}
 	},
-	scoreColor: function (argument) {
+	scoreColor: function () {
 		var rating = Ratings.findOne({
 			user: Meteor.user()._id,
 			question: this._id
 		});
 		if (rating) {
-			if(rating.score > 1) {
+			if (rating.score > 1) {
 				return 'green';
 			}
-			if(rating.score < -1) {
+			if (rating.score < -1) {
 				return 'red';
 			}
 		}
@@ -29,11 +32,12 @@ Template.questionsListItem.helpers({
 });
 
 Template.questionsListItem.events({
-	'click .collection-item': function() {
-		FlowRouter.go('/projects/:projectId/:questionId',{
+	'click .collection-item': function () {
+		FlowRouter.go('/projects/:projectId/:chapterId/:questionId', {
 			projectId: FlowRouter.getParam('projectId'),
+			chapterId: FlowRouter.getParam('chapterId'),
 			questionId: this._id
 		});
 		// /projects/{{projectId}}/{{_id}}
 	}
-})
+});
