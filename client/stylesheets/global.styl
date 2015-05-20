@@ -10,6 +10,7 @@ $gutter = 20px
 
 .center-wrapper
 	center()
+	padding 5px
 
 
 .noPadding
@@ -19,19 +20,20 @@ $gutter = 20px
 	@css {
 		height: calc(100vh - 65px);
 	}
-	overflow auto
 	position relative
 	center()
 
 .questioning-wrapper
-	padding 10px
-	padding-top 20px
+	padding 5px
+	// padding-top 20px
 	position absolute
 	bottom 55px
 	left 0
 	right 0
 	top 0
-	overflow auto
+	overflow-y: scroll;
+	overflow-x: hidden; 
+	-webkit-overflow-scrolling: touch;
 
 .button-footer
 	border-top 1px solid border-color
@@ -98,6 +100,20 @@ ul.collection a.collection-item
 
 .dropdown-content.select-dropdown
 	z-index 2
+
+.fixed-content-wrapper
+	position fixed
+	left 0
+	right 0
+	bottom 0
+	top 65px
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+
+.loading-content
+	margin-top 15px
+	margin-left 15px
 
 main.landing
 	height 100vh

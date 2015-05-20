@@ -133,6 +133,7 @@
       "FlowLayout": false,
       "AccountsTemplates": false,
       "AutoForm": false,
+      "Gravatar": false,
 
       // collections
       "Questions": false,

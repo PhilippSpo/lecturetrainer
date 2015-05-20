@@ -1,0 +1,3 @@
+[submodule "packages/momentum-iron-router"]
+	path = packages/momentum-iron-router
+	url = https://github.com/percolatestudio/momentum-iron-router.git

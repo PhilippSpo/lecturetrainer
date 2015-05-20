@@ -1,13 +1,15 @@
 <template name="updateChapter">
-	<div class="row">
-		<div class="col s12">
-			{{#autoForm collection="Chapters" id="updateChapterForm" type="update" doc=chapter}}
-				{{> afQuickField name="title"}}
+	{{#contentWrapper}}
+		<div class="row">
+			<div class="col s12">
+				{{#autoForm collection="Chapters" id="updateChapterForm" type="update" doc=chapter}}
+					{{> afQuickField name="title"}}
 
-				<button type="submit" class="btn waves-effect blue accent-2">update</button>
-			{{/autoForm}}
+					<button type="submit" class="btn waves-effect blue accent-2">update</button>
+				{{/autoForm}}
+			</div>
 		</div>
-	</div>
+	{{/contentWrapper}}
 </template>
 
 <template name="updateChapterToolbar">
