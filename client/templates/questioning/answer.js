@@ -22,8 +22,9 @@ Template.answer.helpers({
 Template.answer.events({
   'click #nextQuestion': function () {
     $(e.target).text('loading...');
-    Meteor.call('calcNextQuestion', FlowRouter.getParam('questionId'),
-      FlowRouter.getParam('projectId'),
+    Meteor.call('calcNextQuestion', FlowRouter.getParam('projectId'),
+      FlowRouter.getParam('chapterId'), FlowRouter.getParam(
+        'questionId'),
       function (err, result) {
         // result returns the question id
         if (!err) {

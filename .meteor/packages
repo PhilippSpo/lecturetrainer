@@ -14,7 +14,6 @@ mquandalle:stylus
 accounts-password
 useraccounts:core
 reactive-var
-jamielob:transitions
 aldeed:autoform
 aldeed:collection2
 ongoworks:security
@@ -25,3 +24,5 @@ gildaspk:autoform-materialize
 froala:editor
 meteorhacks:kadira
 email
+jparker:gravatar
+philippspo:momentum-flow-router

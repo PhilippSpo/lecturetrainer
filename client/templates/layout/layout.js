@@ -1,4 +1,4 @@
 Template.layout.onCreated(function () {
-  this.reverse = false;
-  LayoutTemplate = this;
+	this.reverse = false;
+	LayoutTemplate = this;
 });
