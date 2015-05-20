@@ -5,9 +5,11 @@
 		</div>
 		<div class="collection-wrapper">
 			<ul class="collection">
-			{{#each questions}}
-				{{> questionsListItem}}
-			{{/each}}
+			{{#if isReadyInitial}}
+				{{#each questions}}
+					{{> questionsListItem}}
+				{{/each}}
+			{{/if}}
 			{{#unless isReady}}
 				{{#if currentRoute 'questions'}}
 					{{>loading}}
