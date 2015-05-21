@@ -1,0 +1,6 @@
+[submodule "packages/user-management"]
+	path = packages/user-management
+	url = https://github.com/SoftBricks/user-management.git
+[submodule "packages/user-management-materialize"]
+	path = packages/user-management-materialize
+	url = https://github.com/SoftBricks/user-management-materialize.git
