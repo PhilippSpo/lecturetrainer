@@ -1,6 +1,6 @@
 Template.questionsList.onCreated(function () {
   var self = this;
-  self.limit = new ReactiveVar(10);
+  self.limit = new ReactiveVar(5);
   self.readyInitial = new ReactiveVar(false);
   self.ready = new ReactiveVar(false);
 
