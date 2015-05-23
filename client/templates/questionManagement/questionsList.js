@@ -56,7 +56,7 @@ Template.questionsList.onCreated(function () {
         // console.log("target became visible (inside viewable area)");
         target.data("visible", true);
         if (this.moreResults()) {
-          this.limit.set(this.limit.get() + 1);
+          this.limit.set(this.limit.get() + 5);
         }
       }
     } else {
@@ -68,7 +68,7 @@ Template.questionsList.onCreated(function () {
   };
   // function to increment limit
   self.incrementLimit = function (inc) {
-    inc = inc || 1;
+    inc = inc || 5;
     self.limit.set(self.limit.get() + inc);
   };
   // check if there are more results
