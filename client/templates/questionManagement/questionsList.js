@@ -2,7 +2,7 @@ Template.questionsList.onCreated(function () {
   var self = this;
   // initial limit
   self.loaded = new ReactiveVar(0);
-  self.limit = new ReactiveVar(5);
+  self.limit = new ReactiveVar(10);
   // initial ready for inital loding indicator
   self.readyInitial = new ReactiveVar(false);
   // ready state of subscription
@@ -52,13 +52,13 @@ Template.questionsList.onCreated(function () {
     // console.log(target.offset().top, threshold);
     // console.log(target.data("visible"));
     if (target.offset().top < threshold) {
-      if (!target.data("visible")) {
+      // if (!target.data("visible")) {
         // console.log("target became visible (inside viewable area)");
-        target.data("visible", true);
+        // target.data("visible", true);
         if (this.moreResults()) {
           this.limit.set(this.limit.get() + 5);
         }
-      }
+      // }
     } else {
       if (target.data("visible")) {
         // console.log("target became invisible (below viewable arae)");
