@@ -24,11 +24,8 @@ gildaspk:autoform-materialize
 froala:editor
 meteorhacks:kadira
 email
-<<<<<<< HEAD
 softbricks:user-management
 softbricks:user-management-materialize
-=======
 jparker:gravatar
 philippspo:momentum-flow-router
 reywood:publish-composite
->>>>>>> master
