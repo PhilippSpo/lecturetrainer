@@ -1,4 +1,5 @@
 <template name="layout">
+	{{#globalLayout}}
 	<header>
 		<div class="navbar-fixed">
 			<nav>
@@ -14,13 +15,6 @@
 	</header>
 
 	<ul id="side-nav" class="side-nav">
-		<!-- <li class="logo">
-			<nav>
-				<a href="#!" class="logo hide-on-med-and-down">
-					Lecture Trainer
-				</a>
-			</nav>
-		</li> -->
 		{{#if currentUser}}
 			{{> userArea}}
 		{{/if}}
@@ -35,4 +29,5 @@
 					{{> Template.dynamic template=fab}}
 			</div>
 	</main>
+	{{/globalLayout}}
 </template>
