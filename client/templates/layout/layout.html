@@ -25,6 +25,7 @@
 		</li>
 		<li>{{> atNavButton }}</li>
 		<a href="/showUsers" class="waves-effect waves-light btn">Users</a>
+		<a href="/showGroups" class="waves-effect waves-light btn">Groups</a>
 		{{#if currentUser}}
 			{{> userArea}}
 		{{/if}}
@@ -36,6 +37,9 @@
 					{{#momentum plugin='flow-router'}}
 						{{> Template.dynamic template=main}}
 					{{/momentum}}
+					<div style="display:none;">
+					{{> Template.dynamic template=globalDialog}}
+				</div>
 					{{> Template.dynamic template=fab}}
 			</div>
 	</main>
