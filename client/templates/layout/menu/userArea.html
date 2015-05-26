@@ -1,0 +1,22 @@
+<template name="userArea">
+  <li class="top-area">
+    <div class="logo-area">
+      <img src="{{gravatar userEmail}}" class="circle brand-circle">
+    </div>
+    <div class="text-area">
+      <div>
+        <div class="primary">{{user.profile.fullname}}</div>
+        <div class="secondary dropdown-button" data-activates='userDropdown'>
+          {{ userEmail }}
+          <i class='mdi-navigation-arrow-drop-down'></i>
+        </div>
+
+        <!-- Dropdown Structure -->
+        <ul id='userDropdown' class='dropdown-content'>
+          <!-- <li>Profile</li> -->
+          <li id="logout">Sign Out</li>
+        </ul>
+      </div>
+    </div>
+  </li>
+</template>

@@ -1,22 +1,24 @@
 <template name="question">
-	<div class="questioning-wrapper">
-		{{#if isSpeechProject}}
-			{{>speechQuestioning question}}
-		{{else}}
-			{{>qaQuestioning question}}
-		{{/if}}
-	</div>
-
-	<div class="button-footer">
-		<div class="center-wrapper nav-footer-wrapper">
-			<button id="prevQuestion" class="btn-flat left waves-effect white">
-				<i class="mdi-navigation-arrow-back"></i>
-			</button>
-			<button id="nextQuestion" class="right waves-effect btn-flat white">
-				<i class="mdi-navigation-arrow-forward"></i>
-			</button>
+	{{#contentWrapper}}
+		<div class="questioning-wrapper center-wrapper">
+			{{#if isSpeechProject}}
+				{{>speechQuestioning question}}
+			{{else}}
+				{{>qaQuestioning question}}
+			{{/if}}
 		</div>
-	</div>
+
+		<div class="button-footer">
+			<div class="center-wrapper nav-footer-wrapper">
+				<!-- <button id="prevQuestion" class="btn-flat left waves-effect white">
+					<i class="mdi-navigation-arrow-back"></i>
+				</button> -->
+				<button id="nextQuestion" class="right waves-effect btn-flat white">
+					Skip
+				</button>
+			</div>
+		</div>
+	{{/contentWrapper}}
 </template>
 
 <template name="questionToolbar">

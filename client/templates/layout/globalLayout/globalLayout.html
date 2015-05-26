@@ -1,0 +1,11 @@
+<template name="globalLayout">
+	{{> UI.contentBlock}}
+
+	<!-- Modal Structure -->
+  <div global-dialog class="modal">
+			{{#if globalDialogTemplate}}
+				{{> UI.dynamic template=globalDialogTemplate data=gobalDialogData}}
+			{{/if}}
+  </div>
+
+</template>

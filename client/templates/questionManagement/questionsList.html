@@ -1,18 +1,31 @@
 <template name="questionsList">
-	<div class="list-heading">
-		All Questions
-	</div>
-	<div class="collection-wrapper">
-		<ul class="collection">
-		{{#each questions}}
-			{{> questionsListItem}}
-		{{/each}}
-		</ul>
-		<div class="fixed-action-btn" style="bottom: 15px; right: 15px;">
-			<a href="/projects/{{projectId}}/{{chapterId}}/newQuestion" id="addUser" class="btn-floating btn-large waves-effect waves-light">
-				<i class="large mdi-content-add"></i>
-			</a>
+	{{#contentWrapper}}
+		<div class="list-heading">
+			All Questions
 		</div>
+		<div class="collection-wrapper">
+			<ul class="collection">
+			{{#if isReadyInitial}}
+				{{#each questions}}
+					{{> questionsListItem}}
+				{{/each}}
+			{{/if}}
+			{{#unless isReady}}
+				{{#if currentRoute 'questions'}}
+					{{>loading}}
+				{{/if}}
+			{{/unless}}
+			<div id="showMoreResults"></div>
+			</ul>
+		</div>
+	{{/contentWrapper}}
+</template>
+
+<template name="addQuestionFab">
+	<div class="fixed-action-btn" style="bottom: 15px; right: 15px;">
+		<a href="/projects/{{projectId}}/{{chapterId}}/newQuestion" id="addUser" class="btn-floating btn-large waves-effect waves-light">
+			<i class="large mdi-content-add"></i>
+		</a>
 	</div>
 </template>
 
