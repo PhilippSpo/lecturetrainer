@@ -1,7 +1,7 @@
 <template name="question">
 	{{#contentWrapper}}
 		<div class="questioning-wrapper center-wrapper">
-			{{#if isSpeechProject}}
+			{{#if isSpeechQuestion question}}
 				{{>speechQuestioning question}}
 			{{else}}
 				{{>qaQuestioning question}}

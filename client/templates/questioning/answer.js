@@ -20,8 +20,9 @@ Template.answer.helpers({
   }
 });
 Template.answer.events({
-  'click #nextQuestion': function () {
+  'click #nextQuestion': function (e) {
     $(e.target).text('loading...');
+    $(e.target).prop( "disabled", true );
     Meteor.call('calcNextQuestion', FlowRouter.getParam('projectId'),
       FlowRouter.getParam('chapterId'), FlowRouter.getParam(
         'questionId'),

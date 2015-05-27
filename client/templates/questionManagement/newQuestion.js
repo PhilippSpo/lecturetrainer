@@ -9,7 +9,7 @@ var helpers = {
     var project = Projects.findOne({
       _id: FlowRouter.getParam('projectId')
     });
-    if (project && project.type === 'Vocable') {
+    if (project && (project.type === 'Vocable' || project.type === 'Speech')) {
       return true;
     }
     return false;

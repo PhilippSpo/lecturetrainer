@@ -12,11 +12,8 @@ Template.question.helpers({
 			_id: FlowRouter.getParam('questionId')
 		});
 	},
-	isSpeechProject: function () {
-		var project = Projects.findOne({
-			_id: FlowRouter.getParam('projectId')
-		});
-		if (project && project.type === 'Speech') {
+	isSpeechQuestion: function (question) {
+		if (question && question.type === 'Vocable') {
 			return true;
 		}
 		return false;

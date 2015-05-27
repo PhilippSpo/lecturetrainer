@@ -4,7 +4,11 @@
 			<div class="col s12">
 				{{#autoForm collection="Questions" id="insertQuestionForm" type="insert"}}
 					{{> afQuickField name="question" autocomplete="off"}}
-					{{> afQuickField name="type" options="allowed"}}
+					{{#if isSpeechProject}}
+						{{> afQuickField name="type" options="allowed"}}
+					{{else}}
+						{{> afQuickField name="type" firstOption="Question-Answer" disabled=true}}
+					{{/if}}
 					{{#if afFieldValueIs name="type" value="Vocable"}}
 						{{> afQuickField name="answer" autocomplete="off"}}
 					{{else}}
