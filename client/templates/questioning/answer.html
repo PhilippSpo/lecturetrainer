@@ -1,58 +1,60 @@
 <template name="answer">
-	<div class="center-wrapper">
-		<div class="list-heading">
-			{{#if correct}}
-			Your answer was correct
-			{{else}}
-			Your answer was wrong
-			{{/if}}
-		</div>
-		{{#with question}}
-		<div class="row">
-			<div class="col s12">
-				{{#if reverse}}
-					The Translation of "{{this.answer}}" in {{project.speechA}} is:
+	{{#contentWrapper}}
+		<div class="center-wrapper">
+			<div class="list-heading">
+				{{#if correct}}
+				Your answer was correct
 				{{else}}
-					The Translation of "{{this.question}}" in {{project.speechB}} is:
+				Your answer was wrong
 				{{/if}}
 			</div>
-		</div>
-		<div class="list-item">
-			<div class="icon">
-				<i class="mdi-navigation-check text-green"></i>
+			{{#with question}}
+			<div class="row">
+				<div class="col s12">
+					{{#if reverse}}
+						The Translation of "{{this.answer}}" in {{project.speechA}} is:
+					{{else}}
+						The Translation of "{{this.question}}" in {{project.speechB}} is:
+					{{/if}}
+				</div>
 			</div>
-			<div class="primary">
-				{{#if reverse}}
-					{{this.question}}
-				{{else}}
-					{{this.answer}}
-				{{/if}}
+			<div class="list-item">
+				<div class="icon">
+					<i class="mdi-navigation-check text-green"></i>
+				</div>
+				<div class="primary">
+					{{#if reverse}}
+						{{this.question}}
+					{{else}}
+						{{this.answer}}
+					{{/if}}
+				</div>
 			</div>
-		</div>
-		{{#unless correct}}
-		<div class="list-item">
-			Your answer was:
-		</div>
-		<div class="list-item">
-			<div class="icon">
-				<i class="mdi-navigation-close text-red"></i>
+			{{#unless correct}}
+			<div class="list-item">
+				Your answer was:
 			</div>
-			<div class="primary">{{userAnswer}}</div>
-		</div>
-		{{/unless}}
-		{{/with}}
+			<div class="list-item">
+				<div class="icon">
+					<i class="mdi-navigation-close text-red"></i>
+				</div>
+				<div class="primary">{{userAnswer}}</div>
+			</div>
+			{{/unless}}
+			{{/with}}
 
-		<div class="row">
-			<div class="col s12">
-				<button id="nextQuestion" class="btn waves-effect blue accent-2">OK</button>
+			<div class="row">
+				<div class="col s12">
+					<button id="nextQuestion" class="btn waves-effect blue accent-2">OK</button>
+				</div>
 			</div>
 		</div>
-	</div>
+	{{/contentWrapper}}
 </template>
 
 <template name="answerToolbar">
 	<div>
-		<a href="/projects/{{projectId}}" class="waves-effect btn-icon">
+		<a href="/projects/{{projectId}}/{{chapterId}}" class="waves-effect btn-icon">
 			<i class="mdi-navigation-arrow-back"></i>
 		</a>
 	</div>

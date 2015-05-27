@@ -1,12 +1,23 @@
 <template name="chaptersList">
-	<div class="list-heading">
-		All Chapters
-	</div>
-	<ul class="collection">
-		{{#each chapters}}
-			{{> chaptersListItem}}
-		{{/each}}
-	</ul>
+	{{#contentWrapper}}
+		<div class="list-heading">
+			All chapters
+		</div>
+    {{#if ready 'chapters'}}
+			<ul class="collection">
+				{{#each chapters}}
+					{{> chaptersListItem}}
+				{{/each}}
+			</ul>
+		{{else}}
+			{{#if currentRoute 'chapters'}}
+				{{>loading}}
+			{{/if}}
+		{{/if}}
+	{{/contentWrapper}}
+</template>
+
+<template name="addChapterFab">
 	<div class="fixed-action-btn" style="bottom: 15px; right: 15px;">
 		<a href="/projects/{{projectId}}/newChapter" id="newChapter" class="btn-floating btn-large waves-effect waves-light">
 			<i class="large mdi-content-add"></i>

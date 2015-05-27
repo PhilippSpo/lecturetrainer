@@ -1,20 +1,22 @@
 <template name="newChapter">
-<div class="row">
-	<div class="col s12 m12 l6">
-		{{# autoForm collection="Chapters" id="insertChapterForm" type="insert"}}
-			{{> afQuickField name="title"}}
-			<div class="row">
-      <div class="col s12 m5">
-        <div class="card-panel teal">
-          <span class="white-text"><b>Hint</b>: Name your chapters like this: "Chapter 1", "Week 1" etc.
-          </span>
-        </div>
-      </div>
-    </div>
-			<button type="submit" class="btn waves-effect blue accent-2">create</button>
-		{{/autoForm}}
-	</div>
-</div>
+	{{#contentWrapper}}
+		<div class="row">
+			<div class="col s12 m12 l6">
+				{{# autoForm collection="Chapters" id="insertChapterForm" type="insert"}}
+					{{> afQuickField name="title"}}
+					<div class="row">
+		      <div class="col s12 m5">
+		        <div class="card-panel teal">
+		          <span class="white-text"><b>Hint</b>: Name your chapters like this: "Chapter 1", "Week 1" etc.
+		          </span>
+		        </div>
+		      </div>
+		    </div>
+					<button type="submit" class="btn waves-effect blue accent-2">create</button>
+				{{/autoForm}}
+			</div>
+		</div>
+	{{/contentWrapper}}
 </template>
 
 <template name="newChapterToolbar">

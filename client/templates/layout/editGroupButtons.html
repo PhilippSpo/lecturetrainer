@@ -1,0 +1,35 @@
+<template name="editGroupButtons">
+  {{#topButtons}}
+  <div></div>
+  <div>
+       <a href="/editGroup/{{groupId}}" class="btn-icon"><i class="mdi-image-edit"></i></a>
+       <a href="/showGroups/{{groupId}}/members" class="btn-icon"><i class="mdi-social-person"></i></a>
+   </div>
+  {{/topButtons}}
+</template>
+
+<template name="groupContext">
+  <div>
+		<a href="/showGroups" class="waves-effect btn-icon">
+			<i class="mdi-navigation-arrow-back"></i>
+		</a>
+	</div>
+  <div>
+    {{#with group}}
+      {{groupname}}
+    {{/with}}
+  </div>
+</template>
+
+<template name="groupContextEdit">
+  <div>
+		<a href="/showGroups/{{groupId}}" class="waves-effect btn-icon">
+			<i class="mdi-navigation-arrow-back"></i>
+		</a>
+	</div>
+  <div>
+    {{#with group}}
+      {{groupname}}
+    {{/with}}
+  </div>
+</template>

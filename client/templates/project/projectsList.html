@@ -1,12 +1,23 @@
 <template name="projectsList">
-	<div class="list-heading">
-		All projects
-	</div>
-	<ul class="collection">
-		{{#each projects}}
-			{{> projectsListItem}}
-		{{/each}}
-	</ul>
+	{{#contentWrapper}}
+		<div class="list-heading">
+			All projects
+		</div>
+		{{#if ready 'projects'}}
+			<ul class="collection">
+				{{#each projects}}
+					{{> projectsListItem}}
+				{{/each}}
+			</ul>
+		{{else}}
+			{{#if currentRoute 'projects'}}
+				{{>loading}}
+			{{/if}}
+		{{/if}}
+	{{/contentWrapper}}
+</template>
+
+<template name="addProjectFab">
 	<div class="fixed-action-btn" style="bottom: 15px; right: 15px;">
 		<a href="/projects/newProject" id="addUser" class="btn-floating btn-large waves-effect waves-light">
 			<i class="large mdi-content-add"></i>

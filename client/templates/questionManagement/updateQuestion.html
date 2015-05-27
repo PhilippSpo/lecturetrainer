@@ -1,20 +1,22 @@
 <template name="updateQuestion">
-	<div class="row">
-		<div class="col s12">
-			{{#if isReady}}
-			{{#autoForm collection="Questions" id="updateQuestionForm" type="update" doc=question}}
-				{{> afQuickField name="question"}}
-				{{#if isSpeechProject}}
-					{{> afQuickField name="answer"}}
-				{{else}}
-					{{> answerEditor question}}
-				{{/if}}
+	{{#contentWrapper}}
+		<div class="row">
+			<div class="col s12">
+				{{#if isReady}}
+				{{#autoForm collection="Questions" id="updateQuestionForm" type="update" doc=question}}
+					{{> afQuickField name="question"}}
+					{{#if isSpeechProject}}
+						{{> afQuickField name="answer"}}
+					{{else}}
+						{{> answerEditor question}}
+					{{/if}}
 
-				<button type="submit" class="btn waves-effect blue accent-2">Submit</button>
-			{{/autoForm}}
-			{{/if}}
+					<button type="submit" class="btn waves-effect blue accent-2">Submit</button>
+				{{/autoForm}}
+				{{/if}}
+			</div>
 		</div>
-	</div>
+	{{/contentWrapper}}
 </template>
 
 <template name="updateQuestionToolbar">

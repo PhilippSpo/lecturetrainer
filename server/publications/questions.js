@@ -12,11 +12,32 @@ Meteor.publish('questions', function (projectId, questionId) {
 	this.ready();
 });
 
-Meteor.publish('questionsForChapter', function (chapterId) {
-	if (chapterId) {
-		return Questions.find({
+Meteor.publishComposite('questionsForChapter', function (chapterId, limit) {
+	if (limit > Questions.find({
 			chapter: chapterId
-		});
+		}).count()) {
+		limit = 0;
 	}
-	return Questions.find();
+	if (chapterId) {
+		return {
+			find: function () {
+				return Questions.find({
+					chapter: chapterId
+				}, {
+					limit: limit
+				});
+			},
+			children: [{
+				find: function (question) {
+					return Ratings.find({
+						user: this.userId,
+						question: question._id
+					});
+				}
+			}]
+		};
+	}
+	return Questions.find({}, {
+		limit: limit
+	});
 });

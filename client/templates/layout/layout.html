@@ -1,4 +1,5 @@
 <template name="layout">
+	{{#globalLayout}}
 	<header>
 		<div class="navbar-fixed">
 			<nav>
@@ -6,6 +7,7 @@
 					<div class="col s12">
 						<div class="toolbar">
 							{{> Template.dynamic template=top}}
+							{{> Template.dynamic template=topButtons}}
 						</div>
 					</div>
 				</div>
@@ -23,12 +25,23 @@
 		</li>
 		<li>{{> atNavButton }}</li>
 		<a href="/showUsers" class="waves-effect waves-light btn">Users</a>
+		<a href="/showGroups" class="waves-effect waves-light btn">Groups</a>
+		{{#if currentUser}}
+			{{> userArea}}
+		{{/if}}
 		{{> Template.dynamic template=aside}}
 	</ul>
 
 	<main>
-		<div class="main-content-wrapper">
-			{{> Template.dynamic template=main}}
-		</div>
+			<div class="main-content-wrapper">
+					{{#momentum plugin='flow-router'}}
+						{{> Template.dynamic template=main}}
+					{{/momentum}}
+					<div style="display:none;">
+					{{> Template.dynamic template=globalDialog}}
+				</div>
+					{{> Template.dynamic template=fab}}
+			</div>
 	</main>
+	{{/globalLayout}}
 </template>

@@ -4,3 +4,12 @@
 [submodule "packages/user-management-materialize"]
 	path = packages/user-management-materialize
 	url = https://github.com/SoftBricks/user-management-materialize.git
+[submodule "packages/momentum-iron-router"]
+	path = packages/momentum-iron-router
+	url = https://github.com/percolatestudio/momentum-iron-router.git
+[submodule "packages/flow-router"]
+	path = packages/flow-router
+	url = https://github.com/meteorhacks/flow-router.git
+[submodule "packages/user-management-groups"]
+	path = packages/user-management-groups
+	url = https://github.com/SoftBricks/user-management-groups.git
