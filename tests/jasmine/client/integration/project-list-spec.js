@@ -26,6 +26,7 @@ describe('project list', function() {
 
   describe('clicking on the add project button', function() {
     it('goes to the add project page', function(done) {
+      console.log($('body'));
       page.getAddProjectButton().click();
       Tracker.flush();
 
@@ -36,16 +37,23 @@ describe('project list', function() {
     });
   });
 
-  describe('clicking on a project', function(done){
-      if(!page.getProjects().get(0)){
-        return;
-      }
-      page.getProjects().get(0).click();
+  describe('clicking on a project', function(){
+    it('goes to the chapters list for the clicked project', function(done){
+      var projectNode = page.getProjects().get(0);
+      var projectName = $(projectNode).text().trim();
+
+      // try to find the project in the database
+      var project = Projects.findOne({name: projectName});
+      expect(project).not.toBeUndefined();
+      // found project -> click on project
+      projectNode.click();
 
       waitForRouter(function() {
-        console.log('current route: '+FlowRouter.getRouteName());
         expect(FlowRouter.getRouteName()).toEqual('chapters');
+        console.log(FlowRouter.getParam('projectId'), project._id);
+        expect(FlowRouter.getParam('projectId')).toEqual(project._id);
         done();
       });
+    });
   });
 });
