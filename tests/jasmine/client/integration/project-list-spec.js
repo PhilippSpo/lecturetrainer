@@ -26,7 +26,6 @@ describe('project list', function() {
 
   describe('clicking on the add project button', function() {
     it('goes to the add project page', function(done) {
-      console.log($('body'));
       page.getAddProjectButton().click();
       Tracker.flush();
 
@@ -50,7 +49,6 @@ describe('project list', function() {
 
       waitForRouter(function() {
         expect(FlowRouter.getRouteName()).toEqual('chapters');
-        console.log(FlowRouter.getParam('projectId'), project._id);
         expect(FlowRouter.getParam('projectId')).toEqual(project._id);
         done();
       });
