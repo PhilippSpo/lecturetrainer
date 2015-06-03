@@ -134,6 +134,7 @@
       "AccountsTemplates": false,
       "AutoForm": false,
       "Gravatar": false,
+      "Materialize": false,
 
       // collections
       "Questions": false,

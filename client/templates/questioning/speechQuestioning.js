@@ -30,8 +30,8 @@ AutoForm.hooks({
 	questioningForm: {
 		before: {
 			method: function (doc) {
-				$(':submit').text('loading...');
-				$(':submit').prop( "disabled", true );
+				$(Template.instance().find(':submit')).text('loading...');
+				$(Template.instance().find(':submit')).prop("disabled", true);
 				Template.question.answer = doc.answer;
 				doc.questionId = FlowRouter.getParam('questionId');
 				doc.projectId = FlowRouter.getParam('projectId');
@@ -40,10 +40,10 @@ AutoForm.hooks({
 				return doc;
 			}
 		},
-		onError: function(id, error) {
-			Materialize.toast(error);
-			$(':submit').text('submit');
-			$(':submit').prop( "disabled", false );
+		onError: function (id, error) {
+			Materialize.toast(error, 3000);
+			$(Template.instance().find(':submit')).text('submit');
+			$(Template.instance().find(':submit')).prop("disabled", false);
 		},
 		onSuccess: function (operation, result) {
 			Template.question.correct = result;
