@@ -43,3 +43,4 @@ QuestionSchema = new SimpleSchema({
 });
 
 Questions.attachSchema(QuestionSchema);
+Questions.initEasySearch(['question','answer']);
