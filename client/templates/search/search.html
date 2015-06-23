@@ -1,0 +1,44 @@
+<template name="search">
+  {{#contentWrapper}}
+		<div class="row">
+			<div class="col s12 m12 l6">
+        <div class="search-input">
+        {{> esInput index="questions" placeholder="Search..." }}
+    </div>
+
+    {{#ifEsInputIsEmpty index="questions"}}
+        <div>Search for questions</div>
+    {{/ifEsInputIsEmpty}}
+
+    {{#ifEsIsSearching index="questions"}}
+        <div>Loading...</div>
+    {{else}}
+        <div class="results-wrapper">
+          <div class="collection-wrapper">
+            <ul class="collection">
+              {{#esEach index="questions"}}
+                    {{> questionsListItem}}
+              {{/esEach}}
+            </ul>
+          </div>
+        </div>
+
+        {{> esLoadMoreButton index="questions"}}
+    {{/ifEsIsSearching}}
+
+    {{#ifEsHasNoResults index="questions"}}
+        <div class="no-results">No results found!</div>
+    {{/ifEsHasNoResults}}
+			</div>
+		</div>
+	{{/contentWrapper}}
+</template>
+
+<template name="searchToolbar">
+	<div>
+		<a href="/" data-activates="side-nav" class="waves-effect btn-icon collapse-sidenav">
+			<i class="mdi-navigation-arrow-back"></i>
+		</a>
+	</div>
+	<div>Search Question</div>
+</template>
